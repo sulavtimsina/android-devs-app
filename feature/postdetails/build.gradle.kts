@@ -52,6 +52,12 @@ android {
     }
 }
 
+kapt {
+    arguments {
+        arg("skipPrivatePreviews", "true")
+    }
+}
+
 dependencies {
     implementation(projects.core.view)
     implementation(libs.bundles.hilt)
