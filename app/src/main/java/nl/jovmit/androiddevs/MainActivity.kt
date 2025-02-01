@@ -9,20 +9,18 @@ import com.airbnb.android.showkase.models.Showkase
 import dagger.hilt.android.AndroidEntryPoint
 import nl.jovmit.androiddevs.core.view.theme.AppTheme
 
-@ShowkaseRoot
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
         setContent {
             startActivity(Showkase.getBrowserIntent(this))
             finish()
-//            AppTheme {
-//                MainApp()
-//            }
+            AppTheme {
+                MainApp()
+            }
         }
     }
 }
