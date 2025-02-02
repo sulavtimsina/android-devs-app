@@ -52,6 +52,12 @@ android {
     }
 }
 
+kapt {
+    arguments {
+        arg("skipPrivatePreviews", "true")
+    }
+}
+
 dependencies {
     implementation(projects.core.view)
     implementation(libs.bundles.hilt)
@@ -61,4 +67,7 @@ dependencies {
     testImplementation(libs.bundles.unit.testing)
 
     testRuntimeOnly(libs.junit.jupiter.engine)
+    debugImplementation(libs.showkase)
+    implementation(libs.showkase.annotation)
+    kaptDebug(libs.showkase.processor)
 }

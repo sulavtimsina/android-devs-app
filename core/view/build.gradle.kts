@@ -42,6 +42,12 @@ android {
     }
 }
 
+kapt {
+    arguments {
+        arg("skipPrivatePreviews", "true")
+    }
+}
+
 dependencies {
     api(platform(libs.compose.bom))
     api(libs.bundles.compose)
@@ -52,4 +58,8 @@ dependencies {
     implementation(libs.bundles.hilt)
 
     kapt(libs.hilt.compiler)
+
+    debugImplementation(libs.showkase)
+    implementation(libs.showkase.annotation)
+    kaptDebug(libs.showkase.processor)
 }

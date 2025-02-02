@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import com.airbnb.android.showkase.annotation.ShowkaseRoot
+import com.airbnb.android.showkase.models.Showkase
 import dagger.hilt.android.AndroidEntryPoint
 import nl.jovmit.androiddevs.core.view.theme.AppTheme
 
@@ -14,6 +16,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            startActivity(Showkase.getBrowserIntent(this))
+            finish()
             AppTheme {
                 MainApp()
             }
